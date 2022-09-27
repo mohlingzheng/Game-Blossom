@@ -10,8 +10,11 @@ public class Enemy : MonoBehaviour
     private float startingHealth = 20;
     public float health;
 
-    private float startingSpeed = 2f;
+    private float startingMoveSpeed = 2f;
     public float moveSpeed;
+
+    private float startingRotateSpeed = 2f;
+    public float rotateSpeed;
 
     private float startingDamage = 5f;
     public float damage;
@@ -25,8 +28,9 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         health = startingHealth;
-        moveSpeed = startingSpeed;
+        moveSpeed = startingMoveSpeed;
         damage = startingDamage;
+        rotateSpeed = startingRotateSpeed;
 
         target = GameObject.FindGameObjectWithTag(tagName).transform;
         rb = this.GetComponent<Rigidbody>();
@@ -45,7 +49,9 @@ public class Enemy : MonoBehaviour
     private void MoveTowardsTarget()
     {
         Vector3 moveDirection = target.position - transform.position;
+        Quaternion lookRotation = Quaternion.LookRotation(moveDirection);
         rb.velocity = moveDirection.normalized * moveSpeed;
+        rb.rotation = Quaternion.RotateTowards(transform.rotation, lookRotation, rotateSpeed);
     }
 
     private IEnumerator AttackTarget()
@@ -56,5 +62,13 @@ public class Enemy : MonoBehaviour
         isCD = false;
     }
 
-    
+    public void takeDamage(float damage)
+    {
+        health -= damage;
+        if (health <= 0)
+        {
+            Destroy(gameObject);
+        }
+    }
+
 }

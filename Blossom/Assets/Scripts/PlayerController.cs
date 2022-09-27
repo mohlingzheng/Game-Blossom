@@ -5,19 +5,22 @@ using UnityEngine;
 public class PlayerController : MonoBehaviour
 {
     private Rigidbody rb;
-    public float moveSpeed = 0.01f;
-    void Start()
-    {
-        rb = this.GetComponent<Rigidbody>();
-    }
+    public float moveSpeed = 5f;
+    //public float rotateSpeed = 5f;
 
+    private void Start()
+    {
+        rb = GetComponent<Rigidbody>();
+    }
     void Update()
     {
         float xDirection = Input.GetAxis("Horizontal");
         float zDirection = Input.GetAxis("Vertical");
 
         Vector3 moveDirection = new Vector3(xDirection, 0, zDirection);
-        //transform.position += moveDirection * moveSpeed;
+        //Quaternion lookRotation = Quaternion.LookRotation(moveDirection);
         rb.velocity = moveDirection * moveSpeed;
+        //rb.rotation = Quaternion.RotateTowards(rb.rotation, lookRotation, moveSpeed);
+
     }
 }
