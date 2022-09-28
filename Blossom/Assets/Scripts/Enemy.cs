@@ -13,7 +13,7 @@ public class Enemy : MonoBehaviour
     private float startingMoveSpeed = 2f;
     public float moveSpeed;
 
-    private float startingRotateSpeed = 2f;
+    private float startingRotateSpeed = 5f;
     public float rotateSpeed;
 
     private float startingDamage = 5f;
@@ -24,6 +24,8 @@ public class Enemy : MonoBehaviour
     private float attackCD = 2f;
 
     private Rigidbody rb;
+
+    public GameObject[] energyPrefabs;
 
     void Start()
     {
@@ -67,6 +69,7 @@ public class Enemy : MonoBehaviour
         health -= damage;
         if (health <= 0)
         {
+            Instantiate(energyPrefabs[0], transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }

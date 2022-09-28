@@ -7,7 +7,7 @@ public class Bullet : MonoBehaviour
     private Rigidbody rb;
     public float moveSpeed = 10f;
 
-    private float startingDamage = 0f;
+    private float startingDamage = 10f;
     public float damage;
 
     private Transform target;

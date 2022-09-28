@@ -9,6 +9,9 @@ public class PlayerStats : MonoBehaviour
     public float health;
     public Image healthBar;
 
+    public float experience;
+    public int level = 1;
+
     void Start()
     {
         health = startingHealth;
@@ -18,6 +21,16 @@ public class PlayerStats : MonoBehaviour
     {
         health -= damage;
         healthBar.fillAmount = health / startingHealth;
+    }
 
+    public void gainExperience(float exp)
+    {
+        experience += exp;
+        if (experience >= 100)
+        {
+            experience -= 100;
+            level++;
+            Debug.Log("level up");
+        }
     }
 }

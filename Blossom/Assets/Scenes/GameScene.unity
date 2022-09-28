@@ -1036,7 +1036,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d85082cdab7e332478d174320e9a5e41, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rb: {fileID: 0}
   moveSpeed: 5
 --- !u!114 &2008508351
 MonoBehaviour:
@@ -1052,6 +1051,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   health: 0
   healthBar: {fileID: 919334225}
+  experience: 0
+  level: 1
 --- !u!114 &2008508352
 MonoBehaviour:
   m_ObjectHideFlags: 0
