@@ -22,6 +22,6 @@ public class Effects : MonoBehaviour
     IEnumerator DestroyThis()
     {
         yield return new WaitForSeconds(time);
-        Destroy(gameObject);
+        Destroy(this.gameObject);
     }
 }

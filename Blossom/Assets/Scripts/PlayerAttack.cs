@@ -6,10 +6,7 @@ using UnityEngine.UI;
 
 public class PlayerAttack : MonoBehaviour
 {
-    private float startingDamage = 10f;
-    public float damage;
-
-    private float attackCDTime = 1.5f;
+    public float attackCDTime = 1.5f;
     private float currentTime;
     public Image autoAttackBar;
     public Transform attackPoint;
@@ -21,7 +18,6 @@ public class PlayerAttack : MonoBehaviour
 
     void Start()
     {
-        damage = startingDamage;
         currentTime = attackCDTime;
     }
 

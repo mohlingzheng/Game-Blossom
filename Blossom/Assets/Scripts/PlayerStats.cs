@@ -12,6 +12,10 @@ public class PlayerStats : MonoBehaviour
     public float experience;
     public int level = 1;
 
+    public GameObject overlayUI;
+
+    public GameObject levelUpEffectPrefabs;
+
     void Start()
     {
         health = startingHealth;
@@ -30,6 +34,9 @@ public class PlayerStats : MonoBehaviour
         {
             experience -= 100;
             level++;
+            GameObject inst = Instantiate(levelUpEffectPrefabs, transform.position, Quaternion.identity);
+            inst.GetComponent<Effects>().Seek(transform);
+            overlayUI.GetComponent<Display>().UpdateLevel(level);
             Debug.Log("level up");
         }
     }
