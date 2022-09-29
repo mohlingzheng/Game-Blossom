@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class Energy : MonoBehaviour
@@ -17,7 +18,8 @@ public class Energy : MonoBehaviour
             GameObject inst = Instantiate(expEffectPrefabs, other.transform.position, Quaternion.identity);
             inst.GetComponent<Effects>().Seek(other.transform);
             other.gameObject.GetComponent<PlayerStats>().gainExperience(experienceContent);
-            Destroy(gameObject);
+            GameObject parentGO = gameObject.transform.root.gameObject;
+            Destroy(parentGO);
         }
     }
 

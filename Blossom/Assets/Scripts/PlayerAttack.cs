@@ -27,7 +27,6 @@ public class PlayerAttack : MonoBehaviour
         autoAttackBar.fillAmount = currentTime / attackCDTime;
         if (currentTime <= 0)
         {
-            Debug.Log("attack");
             PerformAutoAttack();
             currentTime = attackCDTime;
         }

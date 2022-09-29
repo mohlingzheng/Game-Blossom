@@ -37,7 +37,6 @@ public class PlayerStats : MonoBehaviour
             GameObject inst = Instantiate(levelUpEffectPrefabs, transform.position, Quaternion.identity);
             inst.GetComponent<Effects>().Seek(transform);
             overlayUI.GetComponent<Display>().UpdateLevel(level);
-            Debug.Log("level up");
         }
     }
 }
