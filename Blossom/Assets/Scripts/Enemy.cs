@@ -1,31 +1,33 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
-    private Transform target;
-    private string tagName = "Player";
+    [Header("Attribute")]
+    public float startingHealth = 20;
+    public float startingMoveSpeed = 2f;
+    public float startingRotateSpeed = 5f;
 
-    private float startingHealth = 20;
+    [Header("Editor Reference")]
     public float health;
-
-    private float startingMoveSpeed = 2f;
     public float moveSpeed;
-
-    private float startingRotateSpeed = 5f;
     public float rotateSpeed;
 
+    [Header("Attack Related")]
+    private Transform target;
+    private string tagName = "Player";
     private float startingDamage = 5f;
     public float damage;
     public float attackDistance = 1.2f;
-
     private bool isCD = false;
     private float attackCD = 2f;
 
+    [Header("Reward")]
+    public GameObject[] energyPrefabs;
     private Rigidbody rb;
 
-    public GameObject[] energyPrefabs;
 
     void Start()
     {
@@ -73,5 +75,6 @@ public class Enemy : MonoBehaviour
             Destroy(gameObject);
         }
     }
+
 
 }

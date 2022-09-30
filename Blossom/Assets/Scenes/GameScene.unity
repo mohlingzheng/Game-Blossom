@@ -1381,10 +1381,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8968ec5d883e2964a9aca7d9be12aedb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  bulletPrefabs: {fileID: 746911424844056783, guid: a07b34fe638360445a0cc13532e2c540, type: 3}
   attackCDTime: 1
   autoAttackBar: {fileID: 549027993}
   attackPoint: {fileID: 2051151302}
-  bulletPrefabs: {fileID: 746911424844056783, guid: a07b34fe638360445a0cc13532e2c540, type: 3}
+  laserPrefabs: {fileID: 8728077757256307119, guid: a0060c569ddc1d045899dd0f1cb87b1c, type: 3}
+  laserCDTime: 3
+  chainNumber: 3
 --- !u!1 &2037736546
 GameObject:
   m_ObjectHideFlags: 0
