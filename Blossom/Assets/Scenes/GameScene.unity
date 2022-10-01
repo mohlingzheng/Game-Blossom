@@ -729,6 +729,7 @@ MonoBehaviour:
   target: {fileID: 2008508346}
   enemyPrefabs:
   - {fileID: 3553180692802243567, guid: 0b4dde0eafc607947ab8eeb4f98930c7, type: 3}
+  - {fileID: 7220567180033171334, guid: bd7381b57c2f64b408b1d0b197b5f933, type: 3}
   interval: 2
   spawnRadius: 6
 --- !u!1 &919334223
@@ -1386,8 +1387,7 @@ MonoBehaviour:
   autoAttackBar: {fileID: 549027993}
   attackPoint: {fileID: 2051151302}
   laserPrefabs: {fileID: 8728077757256307119, guid: a0060c569ddc1d045899dd0f1cb87b1c, type: 3}
-  laserCDTime: 3
-  chainNumber: 3
+  laserCDTime: 5
 --- !u!1 &2037736546
 GameObject:
   m_ObjectHideFlags: 0

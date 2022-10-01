@@ -12,9 +12,8 @@ public class WaveSpawner : MonoBehaviour
     void Start()
     {
         StartCoroutine(spawnEnemy(interval, enemyPrefabs[0]));
+        StartCoroutine(spawnEnemy(interval * 2, enemyPrefabs[1]));
     }
-
-    
     IEnumerator spawnEnemy(float interval, GameObject enemy)
     {
         yield return new WaitForSeconds(interval);
@@ -27,14 +26,14 @@ public class WaveSpawner : MonoBehaviour
             randomPos.x += spawnRadius;
         randomPos.z = Random.Range(-1, 1);
         if (randomPos.z < 0)
-            randomPos.z -= spawnRadius;
+            randomPos.z -= spawnRadius * 2;
         else
-            randomPos.z += spawnRadius;
+            randomPos.z += spawnRadius * 2;
         randomPos.y = 0;
         spawnPos += randomPos;
         //spawnPos += Random.insideUnitSphere.normalized * spawnRadius;
         spawnPos.y = 0;
-        GameObject newEnemy = Instantiate(enemy, randomPos, Quaternion.identity);
+        GameObject newEnemy = Instantiate(enemy, spawnPos, Quaternion.identity);
         StartCoroutine(spawnEnemy(interval, enemy));
     }
 }

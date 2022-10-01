@@ -5,7 +5,7 @@ using UnityEngine;
 
 public class Energy : MonoBehaviour
 {
-    private float experienceContent = 10f;
+    public float experienceContent = 10f;
 
     public GameObject expEffectPrefabs;
 

@@ -21,9 +21,7 @@ public class PlayerAttack : MonoBehaviour
     private LineRenderer lineRenderer;
     public float laserCDTime = 5f;
     private bool laserOn = true;
-    public int chainNumber = 3;
     private float laserDamage = 20f;
-
 
     void Start()
     {
