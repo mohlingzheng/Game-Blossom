@@ -8,6 +8,7 @@ public class Bullet : MonoBehaviour
     public float moveSpeed = 10f;
 
     private float startingDamage = 10f;
+    private float level;
     public float damage;
 
     private Transform target;
@@ -17,6 +18,9 @@ public class Bullet : MonoBehaviour
     {
         damage = startingDamage;
         rb = this.GetComponent<Rigidbody>();
+        level = (float)GameObject.FindGameObjectWithTag("Player").GetComponent<PlayerStats>().level;
+        IncreaseDamage();
+        StartCoroutine(SelfDestroy());
     }
 
     void Update()
@@ -38,5 +42,17 @@ public class Bullet : MonoBehaviour
             other.GetComponent<Enemy>().takeDamage(damage);
             Destroy(gameObject);
         }
+    }
+
+    private IEnumerator SelfDestroy()
+    {
+        yield return new WaitForSeconds(10f);
+        Destroy(gameObject);
+    }
+
+    public void IncreaseDamage()
+    {
+        float damageIncreased = (level - 1) / 0.1f;
+        damage = startingDamage * (1 + damageIncreased);
     }
 }

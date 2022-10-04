@@ -21,22 +21,27 @@ public class PlayerStats : MonoBehaviour
         health = startingHealth;
     }
 
-    public void takeDamage(float damage)
+    public void TakeDamage(float damage)
     {
         health -= damage;
         healthBar.fillAmount = health / startingHealth;
     }
 
-    public void gainExperience(float exp)
+    public void GainExperience(float exp)
     {
         experience += exp;
         if (experience >= 100)
         {
             experience -= 100;
-            level++;
-            GameObject inst = Instantiate(levelUpEffectPrefabs, transform.position, Quaternion.identity);
-            inst.GetComponent<Effects>().Seek(transform);
-            overlayUI.GetComponent<Display>().UpdateLevel(level);
+            LevelUp();
         }
+    }
+
+    public void LevelUp()
+    {
+        level++;
+        GameObject inst = Instantiate(levelUpEffectPrefabs, transform.position, Quaternion.identity);
+        inst.GetComponent<Effects>().Seek(transform);
+        overlayUI.GetComponent<Display>().UpdateLevel(level);
     }
 }

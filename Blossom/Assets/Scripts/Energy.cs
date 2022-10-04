@@ -17,7 +17,7 @@ public class Energy : MonoBehaviour
         {
             GameObject inst = Instantiate(expEffectPrefabs, other.transform.position, Quaternion.identity);
             inst.GetComponent<Effects>().Seek(other.transform);
-            other.gameObject.GetComponent<PlayerStats>().gainExperience(experienceContent);
+            other.gameObject.GetComponent<PlayerStats>().GainExperience(experienceContent);
             GameObject parentGO = gameObject.transform.root.gameObject;
             Destroy(parentGO);
         }

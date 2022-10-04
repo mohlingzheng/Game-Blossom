@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     public float startingHealth = 20;
     public float startingMoveSpeed = 2f;
     public float startingRotateSpeed = 5f;
+    public GameObject deathEffect;
 
     [Header("Editor Reference")]
     public float health;
@@ -61,7 +62,7 @@ public class Enemy : MonoBehaviour
     private IEnumerator AttackTarget()
     {
         isCD = true;
-        target.GetComponent<PlayerStats>().takeDamage(damage);
+        target.GetComponent<PlayerStats>().TakeDamage(damage);
         yield return new WaitForSeconds(attackCD);
         isCD = false;
     }
@@ -72,6 +73,7 @@ public class Enemy : MonoBehaviour
         if (health <= 0)
         {
             Instantiate(energyPrefabs[0], transform.position, Quaternion.identity);
+            Instantiate(deathEffect, transform.position, Quaternion.identity);
             Destroy(gameObject);
         }
     }

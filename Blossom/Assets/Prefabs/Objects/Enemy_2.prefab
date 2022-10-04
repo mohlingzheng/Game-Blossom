@@ -276,6 +276,7 @@ MonoBehaviour:
   startingHealth: 50
   startingMoveSpeed: 1.5
   startingRotateSpeed: 5
+  deathEffect: {fileID: 728505745726936822, guid: bc70f3647edb39145b75fa8b70847ed5, type: 3}
   health: 0
   moveSpeed: 2
   rotateSpeed: 5
