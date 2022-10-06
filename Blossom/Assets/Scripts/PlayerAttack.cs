@@ -90,7 +90,7 @@ public class PlayerAttack : MonoBehaviour
             if (target != null)
             {
                 float damageRate = laserDamage * Time.deltaTime;
-                target.gameObject.GetComponent<Enemy>().takeDamage(damageRate);
+                target.gameObject.GetComponent<Enemy>().TakeDamage(damageRate);
                 if (lineRenderer.enabled == false)
                 {
                     lineRenderer.enabled = true;

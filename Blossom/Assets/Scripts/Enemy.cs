@@ -28,6 +28,8 @@ public class Enemy : MonoBehaviour
     [Header("Reward")]
     public GameObject[] energyPrefabs;
     private Rigidbody rb;
+    public GameObject gameBuild;
+    public float score;
 
 
     void Start()
@@ -67,7 +69,7 @@ public class Enemy : MonoBehaviour
         isCD = false;
     }
 
-    public void takeDamage(float damage)
+    public void TakeDamage(float damage)
     {
         health -= damage;
         if (health <= 0)
@@ -75,6 +77,8 @@ public class Enemy : MonoBehaviour
             Instantiate(energyPrefabs[0], transform.position, Quaternion.identity);
             Instantiate(deathEffect, transform.position, Quaternion.identity);
             Destroy(gameObject);
+            gameBuild = GameObject.FindGameObjectWithTag("Editor");
+            gameBuild.GetComponent<ScoreUpdate>().GainScore(score);
         }
     }
 

@@ -285,6 +285,8 @@ MonoBehaviour:
   attackDistance: 1.2
   energyPrefabs:
   - {fileID: 2014139473278573660, guid: e0ef6d9da159b7745aa6457a26d4fbdb, type: 3}
+  gameBuild: {fileID: 0}
+  score: 10
 --- !u!54 &3553180692802243561
 Rigidbody:
   m_ObjectHideFlags: 0
