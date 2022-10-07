@@ -52,7 +52,7 @@ public class Bullet : MonoBehaviour
 
     public void IncreaseDamage()
     {
-        float damageIncreased = (level - 1) / 0.1f;
+        float damageIncreased = (level - 1) * 0.1f;
         damage = startingDamage * (1 + damageIncreased);
     }
 }

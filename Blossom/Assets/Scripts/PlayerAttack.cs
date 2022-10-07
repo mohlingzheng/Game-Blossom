@@ -21,7 +21,7 @@ public class PlayerAttack : MonoBehaviour
     private LineRenderer lineRenderer;
     public float laserCDTime = 5f;
     private bool laserOn = true;
-    private float laserDamage = 20f;
+    private float laserDamage = 10f;
 
     void Start()
     {
